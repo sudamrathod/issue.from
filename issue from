@@ -1,0 +1,15 @@
+frappe.ui.form.on('Issue', {
+	refresh(frm) {
+		// your code here
+	},
+	customer:function(frm){
+	    console.log('sudam',frm)
+	    console.log(frappe.session.user_email,frappe.session.user_fullname)
+	    frm.doc.employee_email = frappe.session.user_email
+	    frm.doc.empolyee_name = frappe.session.user_fullname
+	    
+	    frm.refresh_field('empolyee_name')
+		frm.refresh_field('employee_email')
+	   
+	}
+})
